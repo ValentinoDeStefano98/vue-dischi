@@ -1,0 +1,27 @@
+<template>
+    <div class="logoContainer">
+        <img class="logo" src="../../public/spotify-logo.png" alt="">
+    </div>   
+</template>
+
+<script>
+
+export default{
+    name: 'HeaderComp'
+}
+
+</script>
+
+<style scoped lang="scss">
+
+.logoContainer{
+    //height: 100px;
+    background-color: #2D3A46;
+}
+
+.logo{
+    width: 5%;
+    padding: 10px 10px;
+}
+
+</style>
