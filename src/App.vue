@@ -1,17 +1,24 @@
 <template>
   <div>
     <HeaderComp/>
+
+    <div class="container">
+      <LibraryComp/>
+    </div>
   </div>
 </template>
 
 <script>
-import HeaderComp from './components/HeaderComp.vue'
 import "bootstrap"
+import HeaderComp from './components/HeaderComp.vue'
+import LibraryComp from './components/LibraryComp.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HeaderComp
+    HeaderComp,
+    LibraryComp
   }
 }
 </script>
