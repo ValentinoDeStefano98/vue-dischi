@@ -1,9 +1,12 @@
 <template>
-    <div class="col-3 text-center my-5 posterContainer">
-        <img :src="poster" alt="copertina canzone" class="poster">
-        <h3>{{title}}</h3>
-        <h5>{{author}}</h5>
-        <h5>{{year}}</h5>
+    <div class="col text-center my-2 posterContainer">
+        <div class="miniContainer">
+            <img :src="poster" alt="copertina canzone" class="poster">
+            <h5 class="text-uppercase text-white mt-4">{{title}}</h5>
+            <h6 class="mt-4 grey">{{author}}</h6>
+            <h6 class="grey">{{year}}</h6>
+        </div>
+        
     </div>   
 </template>
 
@@ -25,11 +28,23 @@ export default{
 <style scoped lang="scss">
 
 .posterContainer{
-    border: 1px solid black;
+    width: 80%;
     padding: 15px 0;
+    flex-basis: calc((100% / 5) - 40px);
+    margin: 0 20px;
+    background-color: #2D3A46;
+}
+
+.miniContainer{
+    width: 90%;
+    margin: 0 auto;
 }
 
 .poster{
     max-width: 80%;
+}
+
+.grey{
+    color: #747778;
 }
 </style>

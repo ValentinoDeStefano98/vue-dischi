@@ -2,7 +2,7 @@
   <div>
     <HeaderComp/>
 
-    <div class="container">
+    <div class="container d-flex justify-content-center align-items-center">
       <LibraryComp/>
     </div>
   </div>
@@ -43,6 +43,13 @@ html{
 
 body{
   background-color: #1E2D3B;
+}
+
+.container{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 </style>

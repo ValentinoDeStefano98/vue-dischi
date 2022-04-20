@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row my-5" v-if="libraryArray.length == arrayLength">
         <CardLibrary
         v-for="(element, index) in libraryArray"
         :key="index"
@@ -8,7 +8,10 @@
         :author="element.author"
         :year="element.year"
         />
-    </div>   
+    </div>
+    <div v-else>
+        <img src="./../../public/480px-Loader.gif" alt="">
+    </div>
 </template>
 
 <script>
@@ -21,14 +24,16 @@ export default{
     },
     data(){
         return{
-            libraryArray: []
+            libraryArray: [],
+            arrayLength: null,
         }
     },
     created(){
         axios.get( 'https://flynn.boolean.careers/exercises/api/array/music' )
             .then((res)=>{
-                console.log(res.data.response);
                 this.libraryArray = res.data.response
+                this.arrayLength = res.data.response.length
+                console.log(this.arrayLength)
             })
             .catch((error)=> {
                 console.log(error)
@@ -39,7 +44,5 @@ export default{
 </script>
 
 <style scoped lang="scss">
-
-
 
 </style>
