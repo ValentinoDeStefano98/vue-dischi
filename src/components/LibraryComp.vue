@@ -17,10 +17,12 @@
 <script>
 import axios from 'axios';
 import CardLibrary from './partials/CardLibrary.vue'
+
 export default{
     name: 'LibraryComp',
     components: {
-        CardLibrary
+        CardLibrary,
+        
     },
     data(){
         return{

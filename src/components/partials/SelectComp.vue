@@ -1,6 +1,6 @@
 <template>
     <div>
-        <select class="form-select" aria-label="Default select example" v-model="selectedGenre" @change="$emit('funzioneSelect', selectText)">
+        <select class="form-select" aria-label="Default select example" v-model="selectedGenre" @change="$emit('funzioneSelect', selectedGenre)">
             <option selected>Seleziona il genere</option>
             <option value="rock">Rock</option>
             <option value="pop">Pop</option>

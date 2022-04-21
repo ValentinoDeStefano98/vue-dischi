@@ -22,6 +22,7 @@ export default{
     methods: {
         metodoSelect(testo){
             this.testoSelect = testo;
+            console.log(testo);
         },
         filtraggio(){
             if (this.testoSelect === ''){
