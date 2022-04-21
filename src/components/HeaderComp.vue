@@ -1,5 +1,5 @@
 <template>
-    <div class="logoContainer">
+    <div class="logoContainer d-flex justify-content-between align-items-center">
         <img class="logo" src="../../public/spotify-logo.png" alt="">
         <SelectComp @funzioneSelect="metodoSelect"/>
     </div>   
