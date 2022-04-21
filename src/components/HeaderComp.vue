@@ -6,21 +6,8 @@
 
 <script>
 
-
 export default{
     name: 'HeaderComp',
-    components:{
-        
-    },
-    data(){
-        return{
-            
-        }
-        
-    },
-    methods: {
-        
-    },
 }
 
 </script>
@@ -28,7 +15,6 @@ export default{
 <style scoped lang="scss">
 
 .logoContainer{
-    //height: 100px;
     background-color: #2D3A46;
 }
 

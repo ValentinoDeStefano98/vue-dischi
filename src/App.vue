@@ -1,8 +1,9 @@
 <template>
   <div>
+    <!-- Componente dell'header (logo) -->
     <HeaderComp/>
-
     <div class="container d-flex justify-content-center align-items-center">
+      <!-- Componente main (filtri ricerca + album) -->
       <LibraryComp/>
     </div>
   </div>
@@ -10,9 +11,9 @@
 
 <script>
 import "bootstrap"
+//Importo i componenti
 import HeaderComp from './components/HeaderComp.vue'
 import LibraryComp from './components/LibraryComp.vue'
-
 
 export default {
   name: 'App',
@@ -20,12 +21,10 @@ export default {
     HeaderComp,
     LibraryComp
   },
-
 }
 </script>
 
 <style lang="scss">
-
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 #app {
