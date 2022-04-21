@@ -1,6 +1,9 @@
 <template>
     <div class="row my-5" v-if="libraryArray.length == arrayLength">
-        <SelectComp @funzioneSelect="metodoSelect"/>
+        <div class="d-flex justify-content-around mb-5">
+            <SelectComp @funzioneSelect="metodoSelect"/>
+            <SelectAlbumComp @funzioneSelectAlbum="metodoSelectAlbum"/>
+        </div>
         <CardLibrary
         v-for="(element, index) in arrayFilter()"
         :key="index"
@@ -8,7 +11,7 @@
         :title="element.title"
         :author="element.author"
         :year="element.year"
-        />
+        />    
     </div>
     <div v-else>
         <img src="./../../public/480px-Loader.gif" alt="">
@@ -19,18 +22,21 @@
 import axios from 'axios';
 import CardLibrary from './partials/CardLibrary.vue'
 import SelectComp from './partials/SelectComp.vue'
+import SelectAlbumComp from './partials/SelectAlbumComp.vue'
 
 export default{
     name: 'LibraryComp',
     components: {
         CardLibrary,
-        SelectComp
+        SelectComp,
+        SelectAlbumComp
     },
     data(){
         return{
             libraryArray: [],
             arrayLength: null,
-            testoSelect: ''
+            testoSelect: '',
+            testoAlbum: ''
         }
     },
     created(){
@@ -49,6 +55,10 @@ export default{
             this.testoSelect = testo
             console.log(this.testoSelect)
         },
+        metodoSelectAlbum(album){
+            this.testoAlbum = album
+            console.log(this.testoAlbum)
+        },
         arrayFilter(){
             if (this.testoSelect === "start"){
                 return this.libraryArray
@@ -57,10 +67,18 @@ export default{
                     return elem.genre.toLowerCase().includes(this.testoSelect.toLowerCase())
                 })
             }
+        },
+        arrayAlbumFilter(){
+            if (this.testoSelect === "start"){
+                return this.libraryArray
+            } else {
+                return this.libraryArray.filter((elem) => {
+                    return elem.author.toLowerCase().includes(this.testoAlbum.toLowerCase())
+                })
+            }
         }
     }
 }
-
 </script>
 
 <style scoped lang="scss">
