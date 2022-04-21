@@ -2,7 +2,7 @@
     <div>
         <select class="form-select" aria-label="Default select example" v-model="selectedAlbum" @change="$emit('funzioneSelectAlbum', selectedAlbum)">
             <option value="" disabled selected>Seleziona l'artista</option>
-            <option value="start" >-</option>
+            <option value="null" >-</option>
             <option value="Bon Jovi">Bon Jovi</option>
             <option value="Queen">Queen</option>
             <option value="Sting">Sting</option>
