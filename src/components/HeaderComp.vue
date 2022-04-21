@@ -1,13 +1,38 @@
 <template>
     <div class="logoContainer">
         <img class="logo" src="../../public/spotify-logo.png" alt="">
+        <SelectComp @funzioneSelect="metodoSelect"/>
     </div>   
 </template>
 
 <script>
+import SelectComp from './partials/SelectComp.vue'
 
 export default{
-    name: 'HeaderComp'
+    name: 'HeaderComp',
+    components:{
+        SelectComp
+    },
+    data(){
+        return{
+            testoSelect: ''
+        }
+        
+    },
+    methods: {
+        metodoSelect(testo){
+            this.testoSelect = testo;
+        },
+        filtraggio(){
+            if (this.testoSelect === ''){
+                //mostro lista completa
+                return this.libraryArray;
+            }
+            return this.libraryArray.filter((elem) =>{
+                return elem.genre.includes(this.testoSelect)
+            });
+        }
+    },
 }
 
 </script>
