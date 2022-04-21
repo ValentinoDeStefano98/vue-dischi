@@ -1,7 +1,8 @@
 <template>
     <div class="row my-5" v-if="libraryArray.length == arrayLength">
+        <SelectComp @funzioneSelect="metodoSelect"/>
         <CardLibrary
-        v-for="(element, index) in libraryArray"
+        v-for="(element, index) in arrayFilter()"
         :key="index"
         :poster="element.poster"
         :title="element.title"
@@ -17,17 +18,19 @@
 <script>
 import axios from 'axios';
 import CardLibrary from './partials/CardLibrary.vue'
+import SelectComp from './partials/SelectComp.vue'
 
 export default{
     name: 'LibraryComp',
     components: {
         CardLibrary,
-        
+        SelectComp
     },
     data(){
         return{
             libraryArray: [],
             arrayLength: null,
+            testoSelect: ''
         }
     },
     created(){
@@ -40,6 +43,21 @@ export default{
             .catch((error)=> {
                 console.log(error)
             })
+    },
+    methods: {
+        metodoSelect(testo){
+            this.testoSelect = testo
+            console.log(this.testoSelect)
+        },
+        arrayFilter(){
+            if (this.testoSelect === "start"){
+                return this.libraryArray
+            } else {
+                return this.libraryArray.filter((elem) => {
+                    return elem.genre.toLowerCase().includes(this.testoSelect.toLowerCase())
+                })
+            }
+        }
     }
 }
 

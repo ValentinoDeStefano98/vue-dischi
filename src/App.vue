@@ -19,7 +19,8 @@ export default {
   components: {
     HeaderComp,
     LibraryComp
-  }
+  },
+
 }
 </script>
 
