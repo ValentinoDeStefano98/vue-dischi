@@ -60,16 +60,21 @@ export default{
             console.log(this.testoAlbum)
         },
         arrayFilter(){
-            if (this.testoSelect === "start"){
+            if (this.testoSelect === "start" && this.testoAlbum === "start"){
                 return this.libraryArray
-            } else {
+            } else if (this.testoSelect != "start") {
                 return this.libraryArray.filter((elem) => {
                     return elem.genre.toLowerCase().includes(this.testoSelect.toLowerCase())
                 })
+            } else if (this.testoAlbum != "start") {
+                return this.libraryArray.filter((elem) => {
+                    return elem.author.toLowerCase().includes(this.testoAlbum.toLowerCase())
+                })
             }
         },
+        /*
         arrayAlbumFilter(){
-            if (this.testoSelect === "start"){
+            if (this.testoAlbum === "start"){
                 return this.libraryArray
             } else {
                 return this.libraryArray.filter((elem) => {
@@ -77,6 +82,7 @@ export default{
                 })
             }
         }
+        */
     }
 }
 </script>
