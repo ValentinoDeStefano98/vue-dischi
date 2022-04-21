@@ -60,13 +60,13 @@ export default{
             console.log(this.testoAlbum)
         },
         arrayFilter(){
-            if (this.testoSelect === "start" && this.testoAlbum === "start"){
+            if (this.testoSelect === "null" && this.testoAlbum === "null"){
                 return this.libraryArray
-            } else if (this.testoSelect != "start") {
+            } else if (this.testoSelect != "null") {
                 return this.libraryArray.filter((elem) => {
                     return elem.genre.toLowerCase().includes(this.testoSelect.toLowerCase())
                 })
-            } else if (this.testoAlbum != "start") {
+            } else if (this.testoAlbum != "null") {
                 return this.libraryArray.filter((elem) => {
                     return elem.author.toLowerCase().includes(this.testoAlbum.toLowerCase())
                 })
